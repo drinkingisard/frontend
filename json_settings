@@ -1,0 +1,18 @@
+{
+  "workbench.colorTheme": "Community Material Theme",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontLigatures": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.wordWrap": "on",
+  "window.zoomLevel": -1,
+  "editor.fontFamily": "Fira Code",
+  "liveServer.settings.donotVerifyTags": true,
+  "git.autofetch": true,
+  "json.schemas": [
+  
+  ]
+}
