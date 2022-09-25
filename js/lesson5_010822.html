@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тернарный оператор и методы массивов</title>
+</head>
+<body>
+    <script>
+
+        //с помощью функции достать числа из массива кратные 3
+
+        // function addSpecialNumbers(numbers) {
+        //     let specialNumbers = [];
+        //     for (let i = 0; i < numbers.length; i++) {
+        //         if (numbers[i] % 3 == 0) {
+        //             specialNumbers.push(numbers[i]);
+        //         }
+        //     }
+        //     return specialNumbers;
+        // }
+        // let arr = [1, 2, 3, 6, 7, 9, 4];
+        // console.log(addSpecialNumbers(arr));
+
+       // методы перебора массива с forEach
+        // function addSpecialNumbers(numbers) {
+        //     let specialNumbers = [];
+        //     numbers.forEach(function (num) {
+        //         if (num % 3 == 0) {
+        //             specialNumbers.push(num);
+        //         }
+        //     });
+        //     return specialNumbers;
+        // }
+
+        // методы перебора массива с filter с помощью callback
+        //   function addSpecialNumbers(numbers) {
+        //     let result = numbers.filter(function (num) {
+        //         if (num % 3 == 0) {
+        //             return true;
+        //         }
+        //         //return false; // можно прописывать этот ретурн а можно нет.
+        //     }); //здесь действие заканчивается
+        //     return result; //возвращаем значения массива
+        // }
+        // let arr = [1, 2, 3, 6, 7, 9, 4, 12];
+        // console.log(addSpecialNumbers(arr));
+
+        // //стрелочная функция
+        // () => {}
+
+        //тернарный способ
+        // function addSpecialNumbers(numbers) {
+        //     let result = numbers.filter(function (num) {
+        //     return num % 3 == 0 ? true : false;
+        //     }); 
+        //     return result;
+        // }
+        // let arr = [1, 2, 3, 6, 7, 9, 4, 12];
+        // console.log(addSpecialNumbers(arr));
+
+        // метод sort с функцией callback
+        // function sortArr(numbers) {
+        //     numbers.sort(function(a, b) {
+        //         if (a > b) return 1; // сортировка от мал к большому, если a < b сортировка будет от большего к меньшему
+        //         else return -1;
+        //     });
+        //     return numbers;
+        // }
+        // let arr = [1, 77, 3, 6, 7, 9, 4, 12];
+        // console.log(arr);
+        // console.log(sortArr(arr));
+        // console.log(arr);
+
+
+        //работа с копиями copy
+        //  function sortArr(numbers) {
+        //     // let copy = [...numbers];
+        //     let copy = numbers.slice();
+        //     copy.sort(function(a, b) {
+        //         if (a > b) return 1; // сортировка от мал к большому, если a < b сортировка будет от большего к меньшему
+        //         else return -1;
+        //     });
+        //     return copy;
+        // }
+
+        // тернарный метод
+            function sortArr(numbers) {
+            function compare(a, b) {
+                return a < b ? 1 : -1;
+            }
+            return numbers.slice().sort(compare);
+        }
+        let arr = [1, 77, 3, 6, 7, 9, 4, 12];
+        console.log(arr);
+        console.log(sortArr(arr));
+        console.log(arr);
+
+
+        // let cars = ['Ford', 'Audi', 'BMW', 'Opel'];
+
+        // cars.reverse(); // выдает элементы массива в обратном порядке
+        // cars.splice(1, 0, 'another car'); // прибавляем элемент перед 1 элементом
+        // cars.splice(-1, 0, 'another car');// отсчет с последнего элемента
+        // cars.splice(1, 2); //удалили 2 элемента с позиции 1 // 1 - с какой позиции удаляем, 2 - сколько элементов удаляем
+        // console.log(cars);
+        
+        //shift удаляет элемент с начала массива
+        // pop удаляет элемент с конца массива
+        // delete cars[2];
+        // let car = cars.pop();
+        // console.log(car);
+
+
+        // unshift добавляет в начало
+        // cars.unshift = 'Opel';
+        // console.log(cars);
+
+        // push добавляет в конец
+        // cars.push = 'Opel', 'Mazda';
+        // console.log(cars);
+
+
+
+
+
+
+        // console.log(cars);
+        // cars[3] = 'Opel'; //добавится еще один элемент массива
+        // cars[cars.length] = 'Opel';
+        // console.log(cars);
+        // cars[10] = 'Mazda';// так лучше не делать когда остальные элементы пустые
+        // console.log(cars);
+        // cars.length = 12;
+        // console.log(cars);
+
+        
+
+
+
+        // let a = 5;
+        // let b = 7;
+        // let c;
+
+        // if (a < b) {
+        //     c = a;
+        // } else {
+        //     c = b;
+        // }
+        // console.log(c);
+
+        // // тернарный оператор      true              false
+        // // первое выражение ? второе выражение : третье выражение
+
+        // a < b ? c = a : c = b;
+
+
+    </script>
+</body>
+</html>

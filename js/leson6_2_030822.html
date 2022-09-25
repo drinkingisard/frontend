@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>взаимодействие с DOM</title>
+    <style>
+        #horseImg {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>  
+
+    <div><img src="img/horse.webp" id="horseImg" alt=""></div>
+
+    <script>
+
+        let horseImg = document.getElementById("horseImg");
+        let step = 0;
+        let flag = true;
+
+        function animation() {
+            if (window.innerWidth - 200 > step && flag) { //картинка шириной 200 пикс
+                horseImg.style.transform = "scaleX(1)"; 
+                step+= 1;
+            } else {
+                horseImg.style.transform = "scaleX(-1)";    
+                step -= 1;
+                flag = step == 0 ? true : false;
+            } 
+
+            if (Math.round(window.innerWidth / 2) == step + 200) {
+                console.log("я достигла середины экрана. Лошадь.");
+            }
+            horseImg.style.left = step + "px";
+        }
+
+        setInterval(animation, 20);
+
+
+
+    </script>
+</body>
+</html>

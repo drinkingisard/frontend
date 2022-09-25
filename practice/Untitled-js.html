@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Exampl</title>
+</head>
+<body>
+    <noscript>JavaScript is not Enabled!</noscript>
+    <h1 onclick="this.innerText='Mouse Clicked';
+    this.style.color='Red'"">Active Heading</h1>
+
+    <script>
+        document.getElementsByTagName('h1')[0].onmouseover = function () {
+            this.innerText='Mouse is Over'; this.style.color='Blue'
+        }
+    </script>
+    <script src='script.js'></script>
+</body>
+</html>

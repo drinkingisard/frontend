@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>Coffee Machine</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background: url(img/coffeeshop.jpg);
+        }
+        .coffeeButton {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border-left: 30px solid rgba(44, 31, 12, 0.826);
+            border-right: 30px solid rgba(44, 31, 12, 0.826);
+            cursor: pointer;
+        }
+        .coffeeButton:hover {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border-left: 30px solid rgba(224, 193, 100, 0.8);
+            border-right: 30px solid rgba(224, 193, 100, 0.8);
+            cursor: pointer;
+        }
+        .coffeeBlock {
+            background-color: rgba(242, 220, 163, 0.5);
+            border: 1px solid rgb(226, 76, 76);
+            border-radius: 2px;
+            margin-bottom: 1rem;
+        }
+        .coffeeBlock span {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 60px;
+            vertical-align: middle;
+            padding-left: 0.5rem;
+            color: aliceblue;
+        }
+        #display {
+            width: 100%;
+            height: 180px;
+            background-color: rgba(242, 220, 163, 0.827);
+            color: white;
+            border: 1px solid rgb(226, 76, 76);
+            border-radius: 2px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 0.7rem;
+        }      
+        img[src$= 'rub.jpg']:hover {
+            cursor: pointer;
+            filter: brightness(120%);
+        }
+        .animated {
+            animation-name: hide-bill;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+        }
+        @keyframes hide-bill {
+            0% {
+                transform: rotate(-90deg) rotateY(1deg);
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-90deg) rotateY(60deg);
+                opacity: 0;
+            }
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="row coffeeBlock">
+                    <div class="coffeeButton" onclick="getCoffee(155, 'Americano')"></div>
+                    <span>Americano - 155 rub.</span>
+                </div>
+                    <div class="row coffeeBlock">
+                    <div class="coffeeButton" onclick="getCoffee(210, 'Cappuccino')"></div>
+                    <span>Cappuccino - 210 rub.</span>
+                </div>
+                    <div class="row coffeeBlock">
+                    <div class="coffeeButton"  onclick="getCoffee(237, 'Latte')"></div>
+                    <span>Latte - 237 rub.</span>
+                </div>
+                    <div class="row coffeeBlock">
+                    <div class="coffeeButton" onclick="getCoffee(129, 'Espresso')"></div>
+                    <span>Espresso - 129 rub.</span>
+                </div>
+                    <div class="row coffeeBlock">
+                    <div class="coffeeButton" onclick="getCoffee(187, 'Doppio')"></div>
+                    <span>Doppio - 187 rub.</span>
+                </div>
+            </div>
+            <div class="col-md-6 pl-4">
+                <div class="row">
+                    <div class="col-md-6">
+                       <div id="display">
+
+								<p id="displayInfo">Внесите деньги</p>
+
+								<div class="progress">
+									<div
+										class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+										role="progressbar"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></div>
+								</div>
+
+							</div>
+						</div>
+                    <div class="col-md-6"> <input type="" placeholder="Put your money here" id="money">
+                    <img src="img/bill_acc.jpg" alt="купюроприемник"></div>
+                </div>
+            </div>
+        </div>
+                <img src="img/50rub.jpg" alt="50" id="test" data-bill-value="50">;
+                <img src="img/100rub.jpg" alt="100" data-bill-value="100">;
+                <img src="img/500rub.jpg" alt="500" data-bill-value="500">
+    </div>
+       
+    <script>
+        
+            let money = document.getElementById("money");
+			let displayInfo = document.getElementById("displayInfo");
+			let bills = document.querySelectorAll("img[src$='rub.jpg']");
+			let bill_acc = document.querySelector("img[src$='bill_acc.jpg']");
+			let test = document.getElementById("test");
+
+			for (bill of bills) {
+				bill.onmousedown = function (e) {
+					bill = e.currentTarget;
+					bill.style.position = "absolute";
+					bill.style.zIndex = 100;
+					bill.style.transform = "rotate(90deg)";
+
+					document.addEventListener("mousemove", moveElement);
+
+					bill.onmouseup = function () {
+						document.removeEventListener("mousemove", moveElement);
+						bill.style.zIndex = 1;
+
+						let bill_top = bill.getBoundingClientRect().top;
+						let bill_acc_top = bill_acc.getBoundingClientRect().top;
+						let bill_left = bill.getBoundingClientRect().left;
+						let bill_acc_left = bill_acc.getBoundingClientRect().left;
+						let bill_right = bill.getBoundingClientRect().right;
+						let bill_acc_right = bill_acc.getBoundingClientRect().right;
+						let bill_acc_bottom =
+							bill_acc.getBoundingClientRect().bottom -
+							(bill_acc.getBoundingClientRect().height / 3) * 2;
+
+						if (
+							bill_top > bill_acc_top &&
+							bill_left > bill_acc_left &&
+							bill_right < bill_acc_right &&
+							bill_top < bill_acc_bottom
+						) {
+							//bill.hidden = true;
+							bill.classList.add("animated");
+							setTimeout(function () {
+								bill.hidden = true;
+							}, 480);
+							money.value = +money.value + +bill.dataset.billValue;
+						}
+					};
+				};
+
+				function moveElement(event) {
+					let x = event.clientX - 148;
+					let y = event.clientY - 64;
+
+					bill.style.top = y + "px";
+					bill.style.left = x + "px";
+				}
+
+				bill.ondragstart = function () {
+					return false;
+				};
+			}
+
+			function getCoffee(price, name) {
+				if (money.value >= price) {
+					money.value = money.value - price;
+					// money.value -= price; сокращеная арифметика с присваиванием
+					displayInfo.innerHTML = "Ваш " + name + " готов!";
+				} else {
+					displayInfo.innerHTML = "Нет денег, значит нет и кофе.";
+				}
+			}
+			function getChange(num) {
+				let coin;
+				if (num >= 10) coin = 10;
+				else if (num >= 5) coin = 5;
+				else if (num >= 2) coin = 2;
+				else if (num >= 1) coin = 1;
+				console.log(coin);
+				if (num - coin !== 0) getChange(num - coin);
+			}
+
+			function ternGetChange(value) {
+				let coin =
+					value >= 10 ? 10 : value >= 5 ? 5 : value >= 2 ? 2 : value >= 1 ? 1 : "Вся сдача выдана";
+				console.log(coin);
+				if (value - coin !== 0) {
+					ternGetChange(valie - coin);
+				}
+			}
+
+			function oldGetChange(num) {
+				if (num >= 10) {
+					console.log(10);
+					getChange(num - 10);
+				} else if (num >= 5) {
+					console.log(5);
+					getChange(num - 5);
+				} else if (num >= 2) {
+					console.log(2);
+					getChange(num - 2);
+				} else if (num >= 1) {
+					console.log(1);
+					getChange(num - 1);
+				} else {
+					console.log("Вся сдача выдана");
+				}
+			}
+
+			function startProgressBar() {
+				let i = 0;
+
+				function progress() {
+					let progressBar = document.querySelector(".progress-bar");
+					i++;
+					progressBar.style.width = i + "%";
+				}
+				setInterval(progress, 100);
+			}
+
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  </body>
+</html>

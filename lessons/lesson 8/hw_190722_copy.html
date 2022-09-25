@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a6558c2422.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">-->
+
+
+    <link rel="shortcut icon" href="icon.png"/>
+    <title>M-B</title>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /*body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1,h2,h3,h4 {
+            font-weight: 700;
+        }*/
+
+        .item {
+            height:300px;
+            border: 1px solid black;
+        }
+        /*.fa-solid {
+            color: darkred;
+        }*/
+        .fa-solid {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgb(217, 58, 183)), to(rgb(224, 215, 77)));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .box {
+            height: 300px;
+            background: blue;
+        }
+        .news {
+            background-image: url(footer.jpg);
+            height: 20rem;
+            background-size: cover;
+            background-position: center;
+        }
+        .box-news {
+            margin: auto;
+            max-width: 18rem;
+            height: auto;
+            border: 1px dotted black;
+            padding: 0.5rem;
+            background-color: rgba(122, 224, 232, 0.6);
+            border-radius: 4px;
+            box-shadow: 0 0 8px 8px  rgba(53, 142, 148, 0.6);
+            text-align: center;
+        }
+        .icon {
+            height: 50px;
+            border: 2px solid white;
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #18161c;"><a class="navbar-brand" href="/"><img src="Vector.png" style="width: 5rem;" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Vehicles<span class="sr-only">(текущая)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Design</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Innovation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="car1.jpg" class="d-block w-100" alt="mercedes car ">
+            </div>
+            <div class="carousel-item">
+            <img src="car2.jpg" class="d-block w-100" alt="mercedes car">
+            </div>
+            <div class="carousel-item">
+            <img src="car3.jpeg" class="d-block w-100" alt="mercedes car">
+        </div>
+        </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущий</span></a>
+    
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Следующий</span></a>
+    </div>
+    <div class="container-fluid">
+        <div class="row item align-content-center">
+            <div class="col-md-4">
+                <div class="card border-danger m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-success m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-info m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex news">
+        <div class="box-news"><b>"My first customer was a lunatic. My second had a death wish"</b><br><em>by Karl Benz</em></div>
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center text-primary mb-4">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-5"><h2>Contacts</h2>
+                <h4>Address:</h4>
+                <p>Mercedesstraße 120 D-70372 Stuttgart Germany</p>
+                <h4>Tel.:</h4><a href="tel:+4907111730000">+49(0)711-17 30 000</a>
+                <h4>Email:</h4><a href="mailto:dialog@mercedes-benz.com">dialog@mercedes-benz.com</a>
+                <h4>Open hours:</h4>
+                <p>Everyday from 9 am to 6 pm</p>
+            </div>
+            <div class="col-md-7">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn bg-primary form-control text-white">
+                    </div>
+                </form>
+                <div class="row px-3">
+                    <div class="col-md-4 icon bg-primary text-center py-2"><i class="fa-solid fa-hand-holding-heart fa-2x"></i></div>
+                    <div class="col-md-4 icon bg-primary text-center py-2"><i class="fa-solid fa-hands-holding fa-2x"></i></div>
+                    <div class="col-md-4 icon bg-primary text-center py-2"><i class="fa-solid fa-hand-holding-medical fa-2x"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-5">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4d73176ac599c05fe0bd40f88076520040fb33c5765b03bfcd7820ba10651b5a&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+    <footer>
+        <div class="container py-5 text-center text-primary">&#169; <script>document.write (newDate().getFullYear)</script>2022 Copywright</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  </body>
+</html>

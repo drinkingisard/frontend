@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>задание 10</title>
+    <style>
+        body {
+            background-image: url(img/bc2.jpg);
+            width: 100%;
+            height: 100%;
+        }
+        #planeImg {
+            position: absolute;
+            margin-top: 10rem;
+        }
+        #boxImg {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            
+        }
+    </style>
+</head>
+<body>  
+
+    <div><img src="img/airplane.png" id="planeImg" alt=""></div>
+    <div><img src="img/box.png" hidden id="boxImg" ></div>
+
+    <script>
+
+        let planeImg = document.getElementById("planeImg");
+        let step = 0;
+        let flag = true;
+
+        function animation() {
+            if (window.innerWidth - 200 > step && flag) { //картинка шириной 200 пикс
+                planeImg.style.transform = "scaleX(1)"; 
+                step+= 1;
+            } else {
+                planeImg.style.transform = "scaleX(-1)";    
+                step -= 1;
+                flag = step == 0 ? true : false;
+            } 
+
+            if (Math.round(window.innerWidth / 2) == step + 200) {
+                console.log("время сбрасывать груз");
+            }
+            planeImg.style.left = step + "px";
+        }
+        setInterval(animation, 20);
+
+        let boxImg = document.getElementById("boxImg");
+        let stepB = 0;
+
+        function getBox() {
+            if (window.innerHeight > stepB) {
+                stepB += 1;
+            } else {
+                stepB;
+            }
+            boxImg.style.top = stepB + "px";
+            if ((Math.round(window.innerWidth / 2) == stepB + 200)) {
+                boxImg.style.left = stepB + "px";
+                document.getElementById("boxImg").hidden = false;
+            }
+        }
+        setInterval(getBox, 20);
+            
+    </script>
+</body>
+</html>

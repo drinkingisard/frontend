@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex & Grid</title>
+<style>
+        .container {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            /*justify-content: space-between;*/
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            /*flex-wrap: wrap;*/
+            justify-content: end;
+            margin-bottom: 2rem;
+        }
+        .block {
+            display: inline-block;
+            width: 500px;
+            border: 1px gray solid;
+            padding: 1rem;
+        }
+        .wrapper {
+            display: grid;
+            /*grid-template-columns: 200px 200px 500px;*/
+            /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
+            grid-template-rows: 100px 50px;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        .item {
+            width: 100%;
+            height: 10rem;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .orange {
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="block">one</div>
+<div class="block">two</div>
+<div class="block">three</div>
+    </div>
+<div class="wrapper">
+    <div class="item red">qqq</div>
+    <div class="item green">rrr</div>
+    <div class="item orange">fff</div>
+</div>
+</body>
+</html>

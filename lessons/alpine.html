@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Alpine.js & Tailwind</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div
+        x-data="{
+         newText: '',
+         people: ['Antonio', 'Bruno', 'Marco'],
+         addPerson() {
+            this.people.push(this.newText);
+            }
+        }
+         "
+         class="bg-red-200 min-h-screen p-20">
+         <form x-on:submit.prevent = "addPerson">
+            <input type="text" x-model="newText" class="p-3 shadow-2xl rounded">
+         </form>
+         <ul>
+            <template x-for="person in people">
+                <li x-text="person"></li>
+            </template>
+         </ul>
+    </div>
+    
+
+
+
+
+
+
+    <!-- <button x-data x-on:click="alert('clicked')">Нажми на меня</button>
+    <button x-data @click="alert('clicked')">Нажми на меня</button>
+    <button x-data @click="alert('clicked')">Нажми на меня</button> -->
+
+    <!-- <div x-data="{message: 'hi you'}">
+        <input x-model.lazy="message">
+        <p>message: <strong x-text="message"></strong></p>
+    </div> -->
+   
+    <!-- <div x-data="{isShowing: false}" class="bg-red-500 p-5 hover:bg-red-700 hover:text-white">
+        <button @click="isShowing = !isShowing" class="w-48 h-24 bg-gray-400">is it winter?</button>
+        <div x-show="isShowing" class="w-24 h-12">no, it is summer!</div>
+    </div> -->
+
+    
+    <script>
+        // let btn = document.querySelector('button');
+
+        // btn.addEventListener('click', ()=>{
+        //     alert('clicked on a button');
+        // })
+    </script>
+</body>
+</html>

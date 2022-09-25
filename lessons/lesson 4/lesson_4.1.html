@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working w color and images</title>
+    <style>
+      /* body {
+        /*background: #d2c1c1;*/
+        background: url(1200x1200bf-60.jpg);
+        /*background-size: cover;
+        background-repeat: no-repeat;*/
+      /* } */
+      .gradient1 {
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(blue, red, orange, darkgreen);
+      }*/
+      .gradient1 {
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(to bottom left, #ffd700 50%, red 50%);
+      }
+      .gradient2 {
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(to right blue, red);
+      }
+        .gradient2 {
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(70deg blue, red);
+      }
+      .gradient3 {
+        width: 50%;
+        height: 200px;
+        background: linear-gradient(to right, transparent silver, gold);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient1"></div>
+    <div class="gradient2"></div>
+    <div class="gradient3"></div>
+  </body>
+</html>

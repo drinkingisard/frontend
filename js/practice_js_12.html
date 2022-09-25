@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Задание 12</title>
+
+    <style>
+
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+    .bigBox {
+        position: absolute;
+        left: 40%;
+        top: 10%;
+        width: 200px;
+        height: 200px;
+      }
+     
+        /* #yellow {
+            width: 100px;
+            height: 100px;
+            background-color:  rgb(199, 235, 99);
+            
+            
+        }
+        #pink {
+            width: 100px;
+            height: 100px;
+             background-color:  rgb(245, 94, 182);
+         
+            
+        }
+        #blue {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(83, 164, 230);
+         
+            
+        }
+       */
+
+    </style>
+</head>
+<body>
+    <div class="box" id="yellow" style = "background-color: rgb(199, 235, 99)"></div>
+    <div class="box" id="pink" style = "background-color: rgb(245, 94, 182)"></div>
+    <div class="box" id = "blue"style = "background-color: rgb(83, 164, 230)"></div>
+    <div class="bigBox" style = "background-color: darkgrey"></div>
+
+    <script>
+
+      let boxes = document.querySelectorAll("div.box");
+      let bigBox = document.querySelector("div.bigBox");
+
+      for (let i = 0; i < boxes.length; i++) {
+        boxes[i].onmousedown = function () {
+          for (box of boxes) {
+            box.onmousedown = function (event) {
+              box = event.currentTarget;
+              box.style.position = "absolute";
+              box.style.zIndex = 100;
+
+              document.addEventListener("mousemove", moveElement);
+
+              box.onmouseup = function () {
+                document.removeEventListener("mousemove", moveElement);
+
+                let box_top = box.getBoundingClientRect().top;
+                let bigBox_top = bigBox.getBoundingClientRect().top;
+                let box_left = box.getBoundingClientRect().left;
+                let bigBox_left = bigBox.getBoundingClientRect().left;
+                let box_right = box.getBoundingClientRect().right;
+                let bigBox_right = bigBox.getBoundingClientRect().right;
+                let box_bottom = box.getBoundingClientRect().bottom;
+                let bigBox_bottom = bigBox.getBoundingClientRect().bottom;
+
+                if (
+                  box_top > bigBox_top &&
+                  box_left > bigBox_left &&
+                  box_right < bigBox_right &&
+                  box_bottom < bigBox_bottom
+                ) {
+                  box.style.zIndex = 0;
+                  let getColor = window.getComputedStyle(box).backgroundColor;
+                  bigBox.style.backgroundColor = getColor;
+                }
+              };
+            };
+
+            function moveElement(event) {
+              let x = event.clientX - 50;
+              let y = event.clientY - 50;
+
+              box.style.top = y + "px";
+              box.style.left = x + "px";
+            }
+            box.ondragstart = function () {
+              return false;
+            };
+          }
+        };
+      }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+
+    <title>Green Sock</title>
+    <style>
+        body {
+            padding: 20rem;
+        }
+        .auto {
+            width: 90px;
+            height: 89px;
+            background-image: url(img/car.png);
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: orangered;
+        }
+        p {
+            font-size: 2rem;
+            color: blueviolet;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auto"></div>
+    <button onclick="animation()">двигать авто</button>
+    <p id="message_text"></p>
+    <div class="box"></div>
+
+    <script>
+        function animation() {
+            let auto = document.querySelector('.auto');
+
+            gsap.to(auto, {
+                delay: 1,
+                keyframes: [
+                    {x: 500, duration: 5},
+                    {y: 100, delay: 2, duration: 3},
+                    {scaleY: 0, duration: 4},
+                    {transformPerspective: 90},
+                    {autoAlpha: 0},
+                ]
+            })
+        }
+
+        window.onload = function () {
+            let message_text = document.getElementById('message_text');
+
+            gsap.to(message_text, {
+                delay: 2,
+                duration: 3,
+                color: 'red',
+                text: 'вот и загрузилась страница, прошло 2 сек и мы видим текст',
+            });
+        };
+
+        gsap.to('.box', {rotation:'random([10, 25, 90, 45])', x:'random(-100, 100, 10)', duration: 5});
+    </script>
+</body>
+</html>

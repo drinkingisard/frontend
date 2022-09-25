@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>обьектно ориентированный подход</title>
+    <style>
+
+        button {
+            padding: 0.5rem;
+            margin-top: 1rem;
+
+        }
+        #info {
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cat1"></div>
+    <div id="cat2"></div>
+
+    <!-- <div id="info"></div>
+    <button onclick="feedCat()">Feed the cat</button> -->
+
+    <script>
+
+        class Cat {
+            constructor(nickname, age, info) {
+                this.nickname = nickname;
+                this.age = age;
+                this.fullness = 100;
+                this.health = 100;
+                this.info = info;
+                setInterval(this.getHungry.bind(this), 500);
+            }
+            sayMeow() {
+                console.log('Мяу! Меня зовут ' + this.nickname);
+            }
+            getHungry() {
+                if (this.fullness == 0) this.health = this.health - 1;
+                else this.fullness = this.fullness - 1;
+                this.info.innerHTML = `
+                Имя: ${this.nickname}<br>
+                Возраст: ${this.age}<br>
+                Сытость: ${this.fullness}<br>
+                Здоровье: ${this.health}<hr>
+                `;
+            }
+        }
+
+        let cat1 = document.getElementById('cat1');
+        let cat2 = document.getElementById('cat2');
+
+        let barsik = new Cat('Барсик', 2, cat1);
+        let murzik = new Cat('Мурзик', 4, cat2);
+
+
+
+
+
+       // let info = document.getElementById('info'); // сохраняем обьект инфо в переменную инфо
+
+        // let nickname = 'Barsik';
+        // let age = 2;
+        // let fullness = 100;
+        // let health = 100;
+
+        // info.innerHTML = 'Name: ' + nickname + '<br>Age: ' + age + '<br>Fullness: ' + fullness + '<br>Health: ' + health; 
+
+        // function feedCat() {
+        //     fullness = fullness + 1;
+        //     info.innerHTML = 'Name: ' + nickname + '<br>Age: ' + age + '<br>Fullness: ' + fullness + '<br>Health: ' + health; 
+        // }
+
+        // function reduceFullness() {
+        //     if (fullness == 0) health = health - 1;
+        //     else fullness = fullness - 1;
+        //     info.innerHTML = 'Name: ' + nickname + '<br>Age: ' + age + '<br>Fullness: ' + fullness + '<br>Health: ' + health; 
+        // }
+
+        // setInterval(reduceFullness, 500);
+
+        //завести класс КОТ и с помощью классов сделать котов
+
+
+    </script>
+</body>
+</html>

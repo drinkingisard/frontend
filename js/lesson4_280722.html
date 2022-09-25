@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>функции</title>
+    <style>
+        body {
+            height: 95vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 2rem;
+            background-color: turquoise;
+            color: purple;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            width: 30%;
+        }
+        button:hover {
+            background-color: lightblue;
+            color: white;
+        }
+        input {
+            padding: 1rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text" placeholder="num 1" id="num1">
+        <input type="text" placeholder="num 2" id="num2">
+    </div>
+    <button onclick="calc('+')">add (+)</button>
+    <button onclick="calc('*')">multiply (*)</button>
+    <button onclick="calc('-')">minus (-)</button>
+    <button onclick="calc('/')">divide (/)</button>
+
+    <script>
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+
+        function calc(operator) {
+            if(operator === "+") {
+                console.log("результат суммирования: " + (+num1.value + +num2.value));
+            } else if (operator === "*") {
+                console.log("результат умножения: " + num1.value * num2.value);
+            } else if (operator === "-") {
+                console.log("результат вычитания: " + (num1.value - num2.value));
+            } else if (operator === "/") {
+                console.log("результат деления: " + num1.value / num2.value);
+            }
+        }
+        
+        
+        // function sum() {
+        //     console.log("результат суммирования: " + (+num1.value + +num2.value));
+        // }
+        // function mult() {
+        //     console.log("результат умножения: " + num1.value * num2.value);
+        // }
+    </script>
+
+
+   <!--<button onclick="showMsg()">generate a message</button>
+    <script>
+
+        function showMsg() {
+            alert("Hello my friend!")
+        } -->
+
+<!-- 
+        // function power(base, exponent) {
+        //     let result = 1;
+        //     for(let i = 0; i < exponent; i++) {
+        //         result = result * base;
+        //     }
+        //     return result;
+        // }
+        // console.log(power (2,10))
+        
+        // function f(x) {
+        //     return x**2;
+        // }
+        // console.log(f(5));
+        // console.log(f(10));
+
+
+
+        // function makeBoom() {
+        //     console.log("Хрясь!")
+        // }
+        // makeBoom(); -->
+
+</body>
+</html>

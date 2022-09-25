@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    
+
+    <title>Green Sock</title>
+    <style>
+        body {
+            padding: 3rem;
+        }
+        .plane {
+            width: 200px;
+            height: 200px;
+            background-image: url(img/airplane.png);
+            
+        }
+        .cargo {
+           margin: auto;
+           background-image: url(img/box.png);
+           width: 115px;
+           height: 115px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- <div class="auto"></div>
+    <button onclick="animation()">двигать авто</button>
+    <p id="message_text">здесь будет выводиться текст</p> -->
+    <div class="plane"></div>
+    <div class="cargo" id="box"></div>
+
+    <script>
+
+         gsap.to('.plane', {rotation:'random([5, -5, 10, -5])', x: 1000, duration: 20, repeat: -1});
+
+        window.onload = function () {
+            let box = document.getElementById('box', {
+                repeat: 0,
+            });
+            gsap.to(box, {
+                delay: 5,
+                duration: 3,
+                keyframes: [
+                    // {x: 500, duration: 5},
+                    {y: 400, delay: 1, duration: 4},
+                ]
+            })
+         }
+      
+        
+
+
+        // function animation() {
+        //     let plane = document.querySelector('.plane');
+
+        //     gsap.to(plane, {
+        //         delay: 1,
+        //         keyframes: [
+        //             {x: 500, duration: 5},
+        //             {y: 100, delay: 2, duration: 3},
+        //             {scaleY: 0, duration: 4},
+        //             {transformPerspective: 90},
+        //             {autoAlpha: 0},
+        //         ]
+        //     })
+        // }
+
+        // window.onload = function () {
+        //     let message_text = document.getElementById('message_text');
+
+        //     gsap.to(message_text, {
+        //         delay: 2,
+        //         duration: 3,
+        //         color: 'red',
+        //         text: 'вот и загрузилась страница, прошло 2 сек и мы видим текст',
+        //     });
+        // };
+        
+        
+    </script>
+</body>
+</html>

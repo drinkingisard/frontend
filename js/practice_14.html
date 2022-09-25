@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>задание 14</title>
+</head>
+<body>
+
+    <img src="img/coffeeshop.jpg" alt="">
+    <img src="img/coffeeshop2.jpg" alt="">
+
+    <script>
+        let pics = document.getElementsByTagName('img');
+
+        for (let i = 0; i < pics.length; i++) {
+            pics[i].onclick = show; 
+        }
+        function show() {
+            alert(this.getAttribute('src'));
+        }
+
+    </script>
+   
+</body>
+</html>

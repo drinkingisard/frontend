@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>каскадность и специфичность</title>
+    <style>
+        button { /*самый низкий приоритет у тега*/
+            color: red;
+        }
+        button {
+            color: blue;
+        }
+        /*p {
+            color: green !important; /*!important наивысший приоритет очень желательно его избегать он усложняет отладку*/
+
+        .red { /*второй приоритет у class*/
+            color: red;
+        }
+        #blue { /*самый высокий приоритет у id*/
+            color: blue;
+        }
+        .red {
+            color: red;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }/*самый последний каскад-такой и цвет дивов несмотря на то, какой цвет стоит первым в классе*/
+    </style>
+</head>
+<body>
+    <button>привет, я кнопка с синим цветом</button>
+
+    <p class="red" id="blue">так какого цвета будет текст</p>
+    
+    <div class="red blue">text1</div>
+    <div class="blue red">text2</div>
+
+</body>
+</html>

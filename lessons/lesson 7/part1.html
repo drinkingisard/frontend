@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a6558c2422.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>M-B</title>
+    <style>
+        .item {
+            height:300px;
+            border: 1px solid black;
+        }
+        /*.fa-solid {
+            color: darkred;
+        }*/
+        .fa-solid {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgb(74, 217, 58)), to(rgb(89, 72, 117)));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .box {
+            height: 300px;
+            background: blue;
+        }
+        .news {
+            background-image: url(footer.jpg);
+            height: 20rem;
+            background-size: cover;
+            background-position: center;
+        }
+        .box-news {
+            margin: auto;
+            max-width: 18rem;
+            height: auto;
+            border: 1px dotted black;
+            padding: 0.5rem;
+            background-color: rgba(122, 224, 232, 0.6);
+            border-radius: 4px;
+            box-shadow: 0 0 8px 8px  rgba(53, 142, 148, 0.6);
+            text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #18161c;"><a class="navbar-brand" href="/"><img src="logo.jpg" style="width: 5rem;" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Vehicles<span class="sr-only">(текущая)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Design</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Innovation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="car1.jpg" class="d-block w-100" alt="mercedes car ">
+            </div>
+            <div class="carousel-item">
+            <img src="car2.jpg" class="d-block w-100" alt="mercedes car">
+            </div>
+            <div class="carousel-item">
+            <img src="car3.jpeg" class="d-block w-100" alt="mercedes car">
+        </div>
+        </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущий</span></a>
+    
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Следующий</span></a>
+    </div>
+
+    
+    <!--<div class="container-fluid">-->
+        <div class="row item align-content-center">
+
+           <div class="col-md-4">
+                <div class="card border-danger m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+                <div class="card border-success m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+                <div class="card border-info m-auto" style="width: 18rem;"><img src="card2.jpg" class="card-img-top" alt="interior">
+                    <div class="card-body"><p class="card-text">Interior</p></div>
+                </div>
+           </div>
+        </div>
+        
+        <div class="row item p-0 bg-dark">
+            <div class="card m-auto border-dark" style="width: 20rem;"><img src="footer.jpg" class="card-img-top" style="opacity: .5;" alt="footer">
+                <div class="card-body shadow bg-white rounded p-2 mb-3 mx-3"><p class="card-text">"My first customer was a lunatic. My second had a death wish" <br>
+                    <em>by Karl Benz</em></p>
+                 </div>
+            </div>
+        </div>
+
+
+    <div class="container-fluid d-flex news">
+        <div class="box-news"><b>"My first customer was a lunatic. My second had a death wish"</b><br><em>by Karl Benz</em></div>
+    </div>
+
+    <div class="container my-5">
+        <h1 class="text-center text-primary mb-4">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-5"><h2>Contacts</h2>
+            <h4>Address:</h4>
+            <p>г. Москва, ул. Академика Скрябина, дом 9</p>
+            <h4>Tel.:</h4><a href="tel:+74952605289">+7 (495) 260-52-89</a>
+            <h4>Email:</h4><a href="mailto:hotline@eduprof.ru">hotline@eduprof.ru</a>
+            <h4>Open hours:</h4>
+            <p>Everyday from 9 am to 6 pm</p>
+            </div>
+            <div class="col-md-7">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn bg-primary form-control text-white">
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-5">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3c5ba2ffbad6acbecf485e4553b5da78df261431596af73fcc224794e2965700&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+
+    <footer>
+        <div class="container py-5 text-center">&#169; <script>document.write (newDate().getFullYear)</script>2022 Copywright</div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>задание 4</title>
+</head>
+<body>
+    <script>
+        let h = +prompt("введите час");
+        let m = +prompt("введите минуты");
+        let secondsAfter12 = (h*3600 + m*60);
+        let minutesAfter12 = (h*60 + m);
+        let till12 = (1440 - (h*60) + m);
+
+        alert("с полуночи прошло " + secondsAfter12 + " секунд");
+        alert("с полуночи прошло " + minutesAfter12 + " минут");
+        alert("до полуночи осталось " + till12 + " минут");
+    </script>
+</body>
+</html>

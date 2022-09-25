@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dragElement {
+            width: 150px;
+            height: 150px;
+            background: red;
+            border: 1px solid black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="dragElement"></div>
+    <!-- <button id="disBtn">заблокировать изменение цвета</button> -->
+
+    <script>
+        let dragElement = document.getElementById("dragElement");
+        // let disBtn = document.getElementById("disBtn");
+
+        dragElement.onmousedown = function() {
+            document.addEventListener("mousemove", moveElement);
+            
+            document.onmouseup = function() {
+                document.removeEventListener("mousemove", moveElement);
+            }
+        }
+
+        function moveElement(event) {
+            let x = event.clientX - 75;
+            let y = event.clientY - 75;
+
+            dragElement.style.top = y + "px";
+            dragElement.style.left = x + "px";
+        }
+
+        // function changeColor() {
+        //     let red = Math.round(Math.random() * 225);
+        //     let green = Math.round(Math.random() * 225);
+        //     let blue = Math.round(Math.random() * 225);
+
+        //     dragElement.style.background = `rgb(${red}, ${green}, ${blue})`;
+        // }
+        // dragElement.addEventListener("click", changeColor);
+        
+        // disBtn.addEventListener("click", function() {
+        //     console.log("слушатель удален")
+        //     dragElement.removeEventListener("click", changeColor);
+        // })
+
+        // function clickHandler() {
+        //     console.log("вызвана функция обработчик")
+        // }
+
+        // dragElement.onclick = function() {
+        //     console.log("клик по элементу произошел")
+        // }
+    </script>
+</body>
+</html>

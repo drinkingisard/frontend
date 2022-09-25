@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="traffic_light.png"/>
+    <title>Traffic Light</title>
+    <style>
+      * {
+        box-sizing: border-box; /*the width and height properties includes content, padding and border for all elements*/
+      }
+      .container {
+        width: 200px; /*sets the width of the container*/
+        height: 400px; /*sets the height of the container*/
+        background-color: black; /*sets the background color of the container*/
+        border: 5px solid gray; /*sets the border width, style and color of the container*/
+        padding-top: 25px; /*sets top padding (space) of the container*/
+      }
+      .red,
+      .yellow,
+      .green {
+        width: 100px; /*sets width of r,y,g elements*/
+        height: 100px; /*sets height of r,y,g elements*/
+        margin: auto; /*sets centering of r,y,g elements by browser*/
+        border-radius: 50%; /*sets round corners to r,y,g elements*/
+        margin-bottom: 20px; /*sets the bottom margin (space) for r,y,g elements*/
+        box-shadow: inset 0 0 15px rgb(171, 243, 171); /*adds inner shadow of r,y,g elements (x-0, y-o, blur radius 15px, color)*/
+        background-color: gray;
+        cursor: pointer;
+      }
+      .red:hover {
+        background-color: red; /*sets background color of the element red*/
+      }
+      .yellow:hover {
+        background-color: yellow; /*sets background color of the element yellow*/
+      }
+      .green:hover {
+        background-color: green; /*sets background color of the element green*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="red"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+    </div>
+  </body>
+</html>

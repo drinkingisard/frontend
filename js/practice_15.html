@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Введите число!" type="text" id="input1">
+    <input placeholder="Здесь появится результат" type="text" id="input2">
+    <button onclick="buttonClick()">Нажми на меня</button>
+
+    <script>
+        function buttonClick() {
+            let input1 = document.getElementById("input1")
+            let input2 = document.getElementById("input2")
+            let number = Number(input1.value);
+            input2.value = number*number;
+        }
+
+    </script>
+</body>
+</html>

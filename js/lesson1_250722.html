@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - begining</title>
+</head>
+<body>
+
+    <script>
+        // alert("Hello world!");//выводим во сплывающее окно
+        // document.write("Hello world again");//выводим в сам документ
+        // console.log("Hello world and here!");//выводим в консоль
+
+        // let name = "Ivan";
+        // console.log("Hello, " + name);//конкатенация, склейка
+        // name = "Alex";
+        // console.log("Hello, " + name);
+
+        // let a = 12;//12 положили в а
+        // let b = 4;//4 положили в b
+        // let a;
+        // a = 8;
+
+        // знак + это не только математический плюс, но еще и склейка вместе строчных элементов, переменных
+
+        let a = +prompt("введите первое число: ");//prompt возвращает строку пользователь ввел 12 и преобразовалось в строку в переменную а
+        let b = +prompt("введите второе число: ");
+
+        // a = parseInt(a);//parseInt округляет число: 14,3 в 4
+        // b = parseInt(b);
+
+        console.log("a = " + a + " | b = " + b);
+        console.log("сложение: " + (a + b));
+        console.log("умножение: " + a * b);
+        console.log("вычитание: " + (a - b));
+        console.log("деление: " + a / b);
+        console.log("возведение в степень: " + a ** b);
+        console.log("остаток от деления: " + a % b);
+
+        let a = 10
+        let b = 3
+        let c = a % b;
+        console.log("остаток от деления: " + c);
+
+
+
+    </script>
+</body>
+</html>

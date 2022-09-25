@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Разница в использовании методов</title>
+</head>
+<body>
+  <ul id="list">
+    <li class="item">Строка 1</li>
+    <li class="item">Строка 2</li>
+    <li class="item">Строка 3</li>
+  </ul>
+
+  <script>
+    let list = document.getElementById("list");
+    let itemsByClassName = document.getElementsByClassName("item");
+    let itemsByQuerySelector = document.querySelectorAll(".item");
+
+    console.log("Первый лог: ", itemsByClassName, itemsByQuerySelector);
+
+    list.innerHTML += `<li class="item">Строка 4</li>`;
+
+    console.log("Второй лог: ", itemsByClassName, itemsByQuerySelector);
+
+    let nodeListArr = Array.from(itemsByQuerySelector);
+    console.log(nodeListArr);
+
+    nodeListArrTwo = [...itemsByQuerySelector];
+    console.log(nodeListArrTwo);
+    console.log(Array.prototype.slice.call(itemsByClassName));
+
+  </script>
+
+</body>
+</html>
